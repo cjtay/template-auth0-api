@@ -1,0 +1,11 @@
+{
+  "name": "auth0-api",
+  "version": "1.0.0",
+  "description": "api template for auth0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CJ Tay",
+  "license": "ISC"
+}
