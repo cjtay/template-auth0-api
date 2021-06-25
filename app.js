@@ -1,12 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config();
 // import routes
 const userRoutes = require('./routes/users')
 
 const app = express();
 
-// routes middleware
+// middleware
+app.use(cors());
 app.use('/api', userRoutes)
 
 const port = process.env.PORT;
