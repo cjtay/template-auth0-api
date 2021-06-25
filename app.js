@@ -8,7 +8,10 @@ const userRoutes = require('./routes/users')
 const app = express();
 
 // middleware
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
+
 app.use('/api', userRoutes)
 
 const port = process.env.PORT;
