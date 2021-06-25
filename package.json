@@ -1,11 +1,17 @@
 {
-  "name": "auth0-api",
-  "version": "1.0.0",
-  "description": "api template for auth0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "CJ Tay",
-  "license": "ISC"
+    "name": "auth0-api",
+    "version": "1.0.0",
+    "description": "api template for auth0",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "CJ Tay",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "nodemon": "^2.0.7"
+    }
 }
