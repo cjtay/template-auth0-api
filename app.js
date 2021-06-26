@@ -3,18 +3,20 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 // import routes
-const userRoutes = require('./routes/users')
+const userRoutes = require('./routes/users');
 
 const app = express();
 
 // middleware
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-    credentials: true
-}));
+app.use(
+    cors({
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+        credentials: true,
+    })
+);
 
-app.use('/api', userRoutes)
+app.use('/api', userRoutes);
 
 const port = process.env.PORT;
 

@@ -1,8 +1,7 @@
-
 exports.getUser = (req, res) => {
-    res.json({name: 'Tay', age: 50})
-}
+    res.json('This is a data from API');
+};
 
 exports.manageUser = (req, res) => {
-    res.json({name: 'Tay', message: 'do things in controller'})
-}
+    res.json({ name: 'Tay', message: 'do things in controller' });
+};
