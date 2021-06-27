@@ -12,6 +12,6 @@ router.get('/other', (req, res) => {
 });
 
 router.get('/user', controllers.getUser);
-router.get('/manage', controllers.manageUser);
+router.post('/adduser', controllers.addUser);
 
 module.exports = router;
