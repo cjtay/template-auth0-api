@@ -4,10 +4,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 require('dotenv').config();
-// import routes
-const userRoutes = require('./routes/users');
 
 const app = express();
+
+// import routes
+const userRoutes = require('./routes/users');
 
 // ******* SCHEMA ********
 const User = require('./models/user');
@@ -22,18 +23,10 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 app.use('/api', userRoutes);
 
-// ******* ENDPOINTS ********
-app.get('/api/users', async (req, res) => {
-    try {
-        const allUsers = await User.find();
-        res.json(allUsers);
-    } catch (error) {
-        return res.status(400).json({ error: err });
-    }
-});
-
+// ******* DB CONNECT ********
 const port = process.env.PORT;
 
 async function connect() {
