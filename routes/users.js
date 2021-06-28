@@ -1,7 +1,8 @@
 const express = require('express');
 require('dotenv').config();
-var jwt = require('express-jwt');
-var jwks = require('jwks-rsa');
+const jwt = require('express-jwt');
+const jwks = require('jwks-rsa');
+const jwtAuthz = require('express-jwt-authz');
 
 const router = express.Router();
 
@@ -27,7 +28,7 @@ router.get('/other', (req, res) => {
     res.send('hello from other route!');
 });
 
-router.get('/user', requireAuth, controllers.getUser);
+router.get('/user', requireAuth, jwtAuthz(['write:data']), controllers.getUser);
 router.post('/adduser', controllers.addUser);
 
 module.exports = router;
