@@ -28,7 +28,7 @@ router.get('/other', (req, res) => {
     res.send('hello from other route!');
 });
 
-router.get('/user', requireAuth, jwtAuthz(['write:data']), controllers.getUser);
+router.get('/user', requireAuth, jwtAuthz(['read:data']), controllers.getUser);
 router.post('/adduser', controllers.addUser);
 
 module.exports = router;

@@ -4,6 +4,7 @@ exports.getUser = async (req, res, next) => {
     try {
         const result = await User.find();
         console.log('user: ', result);
+        console.log('User ID: ', req.user.sub);
         res.json(result);
     } catch (err) {
         console.log(err);
